@@ -27,7 +27,12 @@ class TestAPI(unittest.TestCase):
         encoded_key, encrypted, test_data = self.test_010_smoke()
 
         import requests
-        mock_content = {'content':encrypted}
+        def raise_for_status(argument):
+            "Mock function for mock"
+            assert argument
+
+        mock_content = {'content':encrypted,
+                        'raise_for_status':raise_for_status}
 
         def mock(*args, **kwargs):
             "Mocking requests.get"
