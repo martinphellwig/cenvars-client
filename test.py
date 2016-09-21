@@ -2,6 +2,7 @@
 """
 Unit Test module
 """
+import os
 import unittest
 from rsa.pkcs1 import DecryptionError
 from cenvars import api, cli
@@ -65,10 +66,14 @@ class TestAPI(unittest.TestCase):
 
     def test_040_get_error(self):
         "Does it raises an error when no key is specified?"
+        if api.constants.ENVIRONMENT_KEY_NAME in os.environ:
+            os.environ.pop(api.constants.ENVIRONMENT_KEY_NAME)
         self.assertRaises(api.constants.CenvarsEnvironmentError, api.get)
 
     def test_050_cli(self):
-        "Does it raise and appropiate error"
+        "Does it raise and appropriate error"
+        if api.constants.ENVIRONMENT_KEY_NAME in os.environ:
+            os.environ.pop(api.constants.ENVIRONMENT_KEY_NAME)
         exception = api.constants.CenvarsEnvironmentError
         self.assertRaises(exception, cli.cenvars)
         self.assertRaises(exception, cli.cenvars_newkey)
