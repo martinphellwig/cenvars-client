@@ -1,9 +1,9 @@
-.. image:: https://img.shields.io/codeship/8c6d7510-148d-0134-3d1b-7a5ab8a25fce/default.svg
+.. image:: https://img.shields.io/codeship/e37b1c90-6212-0134-3d52-0627957cda96/default.svg
    :target: https://bitbucket.org/hellwig/cenvars-client
 .. image:: https://coveralls.io/repos/bitbucket/hellwig/cenvars-client/badge.svg?branch=default 
    :target: https://coveralls.io/bitbucket/hellwig/cenvars-client?branch=default
 .. image:: https://img.shields.io/pypi/v/cenvars-client.svg
-   :target: https://pypi.python.org/pypi/Django-Integrator/
+   :target: https://pypi.python.org/pypi/cenvars-client/
 .. image:: https://img.shields.io/badge/Donate-PayPal-blue.svg
    :target: https://paypal.me/MartinHellwig
 .. image:: https://img.shields.io/badge/Donate-Patreon-orange.svg
@@ -16,32 +16,38 @@ Cenvars Client
 
 What is it?
 ===========
-- The client library for cenvars.
-- The client script for cenvars.
-
+A client library and scripts for cenvars.
 
 What problem does it solve?
 ===========================
-XXX to be written
+This fetches from a cenvars server environment variables
 
 How do I install it?
 ====================
 pip install cenvars-client
 
-
 How do I use it?
 ================
-XXX to be written
 
 Library
 -------
-XXX to be written
-
 .. sourcecode:: shell
 
-  >>> # pass
-  >>> # pass
+  from cenvars import api
 
+
+Library
+-------
+.. sourcecode:: python
+
+  $ cenvars_newkey -s "https://cenvarsserver.example.com/cenvars/
+  $ # This will return an encoded cenvars_key, however in normal operation this
+  $ # will be provided by the cenvar server. For now we assume that the key is
+  $ # stored in the environment under the key CENVARS_KEY
+  $
+  $ source <(cenvars)
+  $ # This will contact the cenvars server, fetch the environment variables and
+  $ # add it to the current shell session.
 
 What license is this?
 =====================
