@@ -48,7 +48,7 @@ def get(encoded_key=None, url=None, key_env_name=None, print_function=False):
 
     if print_function:
         for key, value in data.items():
-            print_function('export %s=%s' % (key, value))
+            print_function("export %s='%s'" % (key, value))
 
     return data
 

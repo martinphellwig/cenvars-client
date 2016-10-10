@@ -7,7 +7,7 @@ from setuptools import setup
 
 NAME = 'cenvars-client'
 DESCRIPTION = 'A Cenvars client and api library.'
-VERSION = '0.0.0.3'
+VERSION = '0.0.1.3'
 LICENSE = 'BSD'
 AUTHOR = 'Martin P. Hellwig'
 AUTHOR_EMAIL = 'martin.hellwig@gmail.com'
